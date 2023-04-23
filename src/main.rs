@@ -1,4 +1,5 @@
 mod reporting;
+mod scanning;
 
 use std::env;
 use std::error;
