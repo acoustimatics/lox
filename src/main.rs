@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+
 mod reporting;
 mod scanning;
 
@@ -62,8 +65,7 @@ fn run_prompt(reporter: &mut Reporter) -> ! {
 
 /// Executes a lox source text.
 fn run(source: &str, reporter: &mut Reporter) {
-    let scanner = Scanner::new(source);
-    let tokens = scanner.scan_tokens();
+    let tokens = scanning::scan_tokens(source);
     for token in tokens.iter() {
         println!("{:?}", token);
     }
